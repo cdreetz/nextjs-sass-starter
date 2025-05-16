@@ -1,9 +1,32 @@
 .root {
-  padding: 24px;
   max-width: 768px;
-  margin: 0 auto 0 auto;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
-    padding: 0 0 0 0;
+    padding: 24px 0;
   }
+}
+
+.center {
+  text-align: center;
+  padding: 128px 24px;
+  margin: 0 auto;
+}
+
+.left {
+  text-align: left;
+  padding: 48px 24px;
+  margin: 0;
+}
+
+.default {
+  min-height: 75vh;
+}
+
+.compact {
+  min-height: auto;
 }

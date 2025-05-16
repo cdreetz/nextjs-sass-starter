@@ -9,17 +9,16 @@ import { H2, H3, H4, Lead, SubLead, P } from '@system/typography';
 export default function DemoSimpleGrid(props) {
   return (
     <div className={styles.root}>
-      <Content>
+      <Content align="left" margin="compact">
         <Lead style={{ marginTop: `1rem` }}>I think a cool graphic would be nice here</Lead>
       </Content>
 
       <section className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.contentSection}>
-            <H4>Revolution and Revolt</H4>
+            <H4>Listen In</H4>
             <SubLead style={{ marginTop: `1rem` }}>
-              A study exploring the relationship between literacy levels and the French Revolution of 1789 suggests that literacy may have played a role in the extent and nature of
-              peasant revolts.
+              A study or some statistic about how much uncaptured data there are in calls, only of which will grow with AI voice use.
             </SubLead>
           </div>
           <div className={styles.columnSection}>
@@ -27,33 +26,30 @@ export default function DemoSimpleGrid(props) {
               <div className={styles.column}>
                 <div className={styles.content}>
                   <P>
-                    <strong>Crime</strong>
+                    <strong>Speed</strong>
                   </P>
                   <P style={{ marginTop: `1rem` }}>
-                    There is a clear correlation between low literacy rates and higher rates of crime. Individuals with low literacy are less likely to fully understand and follow
-                    laws, leading to a higher likelihood of getting into trouble with the law.
+                    From the transcription to text processing, we have the fastest inference pipelines west of the Mississippi
                   </P>
                 </div>
               </div>
               <div className={styles.column}>
                 <div className={styles.content}>
                   <P>
-                    <strong>Educational Impact</strong>
+                    <strong>Pricing</strong>
                   </P>
                   <P style={{ marginTop: `1rem` }}>
-                    Low literacy rates can lead to poor academic performance. In the United States, for example, 4 in 5 adults are literate, but literacy rates have not improved
-                    over time, revealing that US schools continue to underperform.
+                    With highly optimized data pipelines and inference services, we can process more data with less compute and as a result, charge less than comp
                   </P>
                 </div>
               </div>
               <div className={styles.column}>
                 <div className={styles.content}>
                   <P>
-                    <strong>Health Impact</strong>
+                    <strong>Analytics</strong>
                   </P>
                   <P style={{ marginTop: `1rem` }}>
-                    Low literacy can also impact health outcomes. Individuals with low literacy may have limited ability to make important informed decisions, such as understanding
-                    government policies, reading medicine or nutritional labels, and more.
+                    No need for data scientists, ML engineers, data analysts, and BI developers to start understanding your data, everything is built right in
                   </P>
                 </div>
               </div>
@@ -62,30 +58,30 @@ export default function DemoSimpleGrid(props) {
               <div className={styles.column}>
                 <div className={styles.content}>
                   <P>
-                    <strong>Social Impact</strong>
-                  </P>
-                  <P style={{ marginTop: `1rem` }}>Adults with low literacy skills are more likely to live in poverty, and one-third of adults with low literacy are unemployed.</P>
-                </div>
-              </div>
-              <div className={styles.column}>
-                <div className={styles.content}>
-                  <P>
-                    <strong>Economic Impact</strong>
+                    <strong>Open Source</strong>
                   </P>
                   <P style={{ marginTop: `1rem` }}>
-                    Lower literacy rates directly correlate to higher unemployment rates, reduced income, and overall impacts on competitiveness on the global stage 1 . Illiteracy
-                    and low levels of literacy can lead to welfare dependency, lower self-esteem, and higher levels of crime.
+                    Something about being open source
                   </P>
                 </div>
               </div>
               <div className={styles.column}>
                 <div className={styles.content}>
                   <P>
-                    <strong>Trending Downward</strong>
+                    <strong>Deploy anywhere</strong>
                   </P>
                   <P style={{ marginTop: `1rem` }}>
-                    In the fall of 2020, only 37% of kindergarteners in the United States were on track to learn to read, down from 55% a year earlier, and this trend continued
-                    across all elementary-school students.
+                    Something about being able to deploy the service within your own infrastructure
+                  </P>
+                </div>
+              </div>
+              <div className={styles.column}>
+                <div className={styles.content}>
+                  <P>
+                    <strong>IDK gotta come up with something</strong>
+                  </P>
+                  <P style={{ marginTop: `1rem` }}>
+                    Something else
                   </P>
                 </div>
               </div>

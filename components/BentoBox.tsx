@@ -1,18 +1,7 @@
-import styles from '@demos/DemoBentoLayout.module.scss';
-import * as React from 'react';
-import Content from '@system/layouts/Content';
-import { H2, Lead } from '@system/typography';
+import styles from '@components/BentoBox.module.scss';
 
-export default function DemoBentoLayout(props) {
+export default function BentoBox() {
   return (
-    <div className={styles.root}>
-      {props.hideContent ? null : (
-        <Content>
-          <H2>DemoBentoLayout</H2>
-          <Lead style={{ marginTop: `1rem` }}>2 or 4 row sections that can be resized and viewed in any viewport.</Lead>
-        </Content>
-      )}
-
       <div className={styles.bento}>
         <div className={styles.row}>
           <div className={styles.columnWide}>
@@ -91,6 +80,5 @@ export default function DemoBentoLayout(props) {
           </div>
         </div>
       </div>
-    </div>
-  );
+  )
 }
