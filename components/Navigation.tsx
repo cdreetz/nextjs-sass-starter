@@ -1,15 +1,14 @@
 import styles from '@components/Navigation.module.scss';
-
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
-
 import ModalNavigation from '@root/demos/modals/ModalNavigation';
-
 import { useModals } from '@root/system/modals/ModalContext';
 import ModalNavigationV2 from '@root/demos/modals/ModalNavigationV2';
+import { useUser } from '@stackframe/stack';
 
 export default function Navigation() {
   const modals = useModals();
+  const user = useUser();
 
   return (
     <nav className={styles.root}>
@@ -28,14 +27,14 @@ export default function Navigation() {
 
       </section>
       <section className={styles.right}>
-        <span
+        <a
           className={styles.item}
           id="site-navigation-button"
-          onClick={() => modals.open(ModalNavigationV2, { parentId: 'site-navigation-button' })}
+          href={user ? "/handler/signout" : "/handler/signup"}
           data-detector-ignore-navigation
         >
-          Sign in
-        </span>
+          {user ? "Sign out" : "Sign in"}
+        </a>
       </section>
     </nav>
   );

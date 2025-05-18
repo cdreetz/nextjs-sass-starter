@@ -2,15 +2,15 @@
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
+
 }
 
 .bento {
   border: 1px solid var(--theme-border);
-  margin-top: 24px;
-  margin-bottom: 128px;
+  margin: 24px auto 128px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
 }
 
 .row {
