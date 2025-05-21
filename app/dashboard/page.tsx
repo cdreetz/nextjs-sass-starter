@@ -1,63 +1,44 @@
 'use client'
 
 import * as React from 'react';
-
+import styles from './page.module.scss';
 import Navigation from '@components/Navigation';
 import DashboardWithSidebarLayout from '@components/DashboardWithSidebarLayout';
 import DemoSidebarLayout from '@components/DemoSidebarLayout';
+import Overview from '@components/dashboard/overview';
+import Uploads from '@components/dashboard/uploads';
+import AudioFiles from '@components/dashboard/audio-files';
+import SettingsPage from '@components/dashboard/settings';
 
-import { Sankey, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import styles from './page.module.scss';
-
-const initialData = {
-    nodes: [
-        { name: 'Visit' },
-        { name: 'Direct-Favorite' },
-        { name: 'Page-Click' },
-        { name: 'Detail-Favorite' },
-        { name: 'Lost' },
-        { name: 'Detail-Click' },
-    ],
-    links: [
-        { source: 0, target: 1, value: 3728 },
-        { source: 0, target: 2, value: 6000 },
-        { source: 0, target: 3, value: 354170 },
-        { source: 3, target: 4, value: 62429 },
-        { source: 3, target: 5, value: 291741 },
-
-    ],
-}
-
-function SankeyChart() {
-    const [data, setData] = React.useState(initialData);
-    return (
-        <ResponsiveContainer width="100%" height={500}>
-            <Sankey
-                data={data}
-                nodePadding={50}
-                margin={{ 
-                    top: 20, 
-                    right: 10, 
-                    bottom: 20, 
-                    left: 10 
-                }}
-                link={{ stroke: '#77c878'}}
-            >
-                <Tooltip />
-            </Sankey>
-        </ResponsiveContainer>
-    )
-}
+import { useUser } from '@stackframe/stack';
 
 export default function DashboardPage() {
-    const sidebarElement = <DemoSidebarLayout />
+    useUser({ or: 'redirect' });
+    const [activeItem, setActiveItem] = React.useState('Overview');
+    
+    const renderContent = () => {
+        switch (activeItem) {
+            case 'Overview':
+                return <Overview />;
+            case 'Uploads':
+                return <Uploads />;
+            case 'Files':
+                return <AudioFiles />;
+            case 'Settings':
+                return <SettingsPage />;
+            default:
+                return <Overview />;
+        }
+    };
+
+    const sidebarElement = <DemoSidebarLayout onItemClick={setActiveItem} activeItem={activeItem} />
+    
     return (
         <div>
             <Navigation />
             <DashboardWithSidebarLayout sidebar={sidebarElement}>
                 <div className={styles.dashboardContent}>
-                    <h1>Dashboard</h1>
-                    <SankeyChart />
+                    {renderContent()}
                 </div>
             </DashboardWithSidebarLayout>
         </div>

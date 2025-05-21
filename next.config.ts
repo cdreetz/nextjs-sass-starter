@@ -1,5 +1,8 @@
 const nextConfig = {
-  devIndicators: false
+  devIndicators: false,
+  sassOptions: {
+    includePaths: ['./'],
+  }
 }
  
 module.exports = nextConfig

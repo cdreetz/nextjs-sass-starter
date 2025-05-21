@@ -1,0 +1,243 @@
+.overview {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bento {
+  border: 1px solid var(--theme-border);
+  margin: 32px auto 64px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: none;
+  padding: 48px 32px;
+  gap: 48px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 8px;
+  }
+}
+
+.columnWide {
+  width: 420px;
+  max-width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.full {
+  width: 100%;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.uploadSection, .fileList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--theme-text-secondary, #374151);
+    margin-bottom: 18px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+}
+
+.dropZone {
+  width: 100%;
+  max-width: 340px;
+  min-height: 160px;
+  border: 1.5px dashed var(--theme-border);
+  border-radius: 10px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+  padding: 24px 12px;
+
+  &:hover, &.dragging {
+    border-color: var(--theme-text-secondary, #374151);
+    background: #f1f5f9;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.06);
+  }
+}
+
+.dropZoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: var(--theme-text-secondary);
+}
+
+.uploadIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--theme-text-secondary);
+  margin-bottom: 2px;
+}
+
+.dropText {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--theme-text, #222);
+  margin-bottom: 2px;
+}
+
+.fileInputLabel {
+  display: inline-block;
+  padding: 7px 18px;
+  background-color: var(--theme-text-secondary, #374151);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 6px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+
+  &:hover {
+    background-color: var(--theme-text, #222);
+  }
+}
+
+.fileInput {
+  display: none;
+}
+
+.files {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.fileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  max-width: 320px;
+  font-size: 0.97rem;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fileName {
+  font-size: 0.98rem;
+  color: var(--theme-text);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.fileSize {
+  font-size: 0.85rem;
+  color: var(--theme-text-secondary);
+}
+
+.removeButton {
+  padding: 3px 8px;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+    color: #dc2626;
+  }
+}
+
+.uploadButton {
+  margin-top: 18px;
+  padding: 9px 20px;
+  background-color: var(--theme-text-secondary, #374151);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+
+  &:hover:not(:disabled) {
+    background-color: var(--theme-text, #222);
+  }
+
+  &:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+  }
+}
+
+.noFiles {
+  color: #888;
+  font-size: 0.98rem;
+  text-align: center;
+  width: 100%;
+  padding: 18px 0;
+  opacity: 0.8;
+} 
